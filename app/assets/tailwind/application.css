@@ -1,0 +1,45 @@
+@import "tailwindcss" source(none);
+@source "../../../public/*.html";
+@source "../../../app/helpers/**/*.rb";
+@source "../../../app/javascript/**/*.js";
+@source "../../../app/views/**/*";
+
+@plugin "./daisyui.js";
+
+.trix-toolbar {
+    background-color: #c9d1dd !important; /* Color oscuro */
+    border-radius: 8px;
+    padding: 6px;
+  }
+  
+  /* Botones del toolbar */
+  .trix-button-group {
+    background-color: #c9d1dd !important;
+    border-radius: 4px;
+  }
+  
+  /* Estilos para los botones individuales */
+  .trix-button {
+    color: white !important;
+    background-color: transparent !important;
+    border: none !important;
+  }
+  
+  .trix-button:hover {
+    background-color: #acb8c9 !important;
+  }
+  
+  /* Iconos en blanco */
+  .trix-button svg {
+    fill: white !important;
+  }
+  
+  /* Contenido del editor */
+  .trix-content {
+    color: white !important;
+    background-color: #111827 !important;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  

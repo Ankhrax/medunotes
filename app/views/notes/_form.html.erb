@@ -1,0 +1,18 @@
+<%= form_with model: @note do |form| %>
+  <div>
+  <%= form.label :title, class: "text-bold" %>
+  <%= form.text_field :title, class:"border rounded-lg p-2 w-full" %>
+  </div>
+
+  <div>
+    <%= form.label :body, class: "block font-bold mb-2" %>
+    <%= form.rich_text_area :body, class: "trix-content text-white bg-gray-800 p-4 rounded-lg" %>
+  </div>
+
+<br>
+  <div>
+    <%= form.submit "Save", class: "btn btn-success h-10" %>
+  
+    <%= link_to "Cancel", notes_path, class: "btn btn-ghost" %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<div id="notes">
+  <% @notes.each do |note| %>
+    <div class="dropdown">
+      <button class="btn m-1 bg-black text-white"><%= note.title %></button>
+      <ul class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+        <li><a><%= link_to truncate(note.body.to_plain_text, length: 100, omission: '...'), note %></a></li>
+
+      </ul>
+    </div>
+    <br>
+  <% end %>
+</div>
