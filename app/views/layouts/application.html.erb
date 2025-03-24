@@ -24,6 +24,15 @@
 
   <body>
     <%= render "notes/navbar" %>
+    <% if flash[:notice] %>
+      <div class="alert alert-success shadow-lg w-fit">
+        <span><%= flash[:notice] %></span>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class="alert alert-error shadow-lg w-fit">
+        <span><%= flash[:alert] %></span>
+      </div>
+    <% end %>
     
       <%= yield %>
     

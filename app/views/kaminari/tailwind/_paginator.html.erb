@@ -1,0 +1,15 @@
+<% if @notes.total_pages > 1 %>
+  <div class="join mt-4 flex justify-center">
+    <%== link_to_if @notes.first_page?, '«', url_for(page: 1), class: "btn join-item btn-disabled" do %>
+      <%= link_to '«', url_for(page: @notes.prev_page), class: "btn join-item" %>
+    <% end %>
+
+    <% (1..@notes.total_pages).each do |page| %>
+      <%= link_to page, url_for(page: page), class: "btn join-item #{'btn-active' if page == @notes.current_page}" %>
+    <% end %>
+
+    <%== link_to_if @notes.last_page?, '»', url_for(page: @notes.total_pages), class: "btn join-item btn-disabled" do %>
+      <%= link_to '»', url_for(page: @notes.next_page), class: "btn join-item" %>
+    <% end %>
+  </div>
+<% end %>

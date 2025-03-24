@@ -1,12 +1,36 @@
 <div id="notes">
-  <% @notes.each do |note| %>
-    <div class="dropdown">
-      <button class="btn m-1 bg-black text-white"><%= note.title %></button>
-      <ul class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-        <li><a><%= link_to truncate(note.body.to_plain_text, length: 100, omission: '...'), note %></a></li>
+ <h2 class="text-center font-bold text-xl text-white">Lasted Edited Notes</h2>
 
-      </ul>
+    <div class="flex flex-wrap space-x-4">
+      <% @recent_notes.each do |note| %>
+        <%= link_to note_path(note) do %>
+          <div class="card card-border w-96 border-white mb-4">
+            <div class="card-body bg-transparent">
+              <h3 class="card-title text-lg font-semibold"><%= note.title %></h3>
+              <p><%= truncate(note.body.to_plain_text, length: 50, omission: '...') %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-    <br>
-  <% end %>
+
+
+  <h1 class= "text-bold text-4xl p-4" > Your Notes </h1>
+   <% if @notes.any? %> 
+    <% @notes.each do |note| %>
+      <div class="dropdown">
+        <button class="btn m-1 bg-black text-white"><%= note.title %></button>
+        <ul class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+          <li><a><%= link_to truncate(note.body.to_plain_text, length: 100, omission: '...'), note %></a></li>
+
+        </ul>
+      </div>
+      <br>
+    <% end %>
+    <div class="mt-4 flex justify-center">
+      <%= paginate @notes, theme: "tailwind" %>
+    </div>  
+    <% else %>
+      <p class="text-center text-gray-500"> No notes found matching your search.</p>
+    <%end%>
 </div>

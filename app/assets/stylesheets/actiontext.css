@@ -41,7 +41,7 @@ trix-toolbar .trix-button-group-spacer {
 trix-toolbar .trix-button {
   position: relative;
   float: left;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(241, 234, 234, 0.6);
   font-size: 0.75em;
   font-weight: 600;
   white-space: nowrap;
