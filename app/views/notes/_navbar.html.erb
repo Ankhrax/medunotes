@@ -5,31 +5,37 @@
 
   <div class="flex gap-2 items-center w-full justify-between">
     <!-- Formulario de Búsqueda -->
-    <%= form_with url: notes_path, method: :get, class: "flex items-center gap-2" do %>
-      <input type="text" name="query" placeholder="Search notes..." value="<%= params[:query] %>"
-        class="input input-bordered w-24 md:w-auto" />
-      <button type="submit" class="btn btn-primary">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M16 11a5 5 0 1 0-10 0 5 5 0 0 0 10 0z" />
-        </svg>
-      </button>
-    <% end %>
+    <% if authenticated? %>
+        <%= form_with url: notes_path, method: :get, class: "flex items-center gap-2" do %>
+          <input type="text" name="query" placeholder="Search notes..." value="<%= params[:query] %>"
+            class="input input-bordered w-24 md:w-auto" />
+          <button type="submit" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M16 11a5 5 0 1 0-10 0 5 5 0 0 0 10 0z" />
+            </svg>
+          </button>
+        <% end %>
+    <%end%>
 
     <!-- Botón de Nueva Nota -->
-    <%= link_to "New Note", new_note_path, class: "btn btn-success text-xl" %>
+    <% if authenticated? %>
+      <%= link_to "New Note", new_note_path, class: "btn btn-success text-xl" %>
+    <% end %>
 
     <!-- Menú desplegable -->
-    <div class="dropdown dropdown-end">
-      <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-        </svg>
+    <% if authenticated? %>  
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
+          
+          <li><a><%= button_to "Log out", session_path, method: :delete if authenticated? %></a></li> 
+        </ul>
       </div>
-      <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Sign up</a></li> 
-      </ul>
-    </div>
+    <% end %>
   </div>
 </div>
 
