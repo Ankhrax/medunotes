@@ -3,7 +3,7 @@
 */
 
 trix-editor {
-  border: 1px solid #bbb;
+  border: 1px solid #ffffff;
   border-radius: 3px;
   margin: 0;
   padding: 0.4em 0.6em;
@@ -11,7 +11,16 @@ trix-editor {
   outline: none; }
 
 trix-toolbar * {
-  box-sizing: border-box; }
+  box-sizing: border-box;} 
+  
+
+.trix-content pre {
+    background-color: #4d4646; /* Fondo gris claro */
+    color: #000000; /* Texto negro */
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-family: monospace;
+  }
 
 trix-toolbar .trix-button-row {
   display: flex;
@@ -19,12 +28,31 @@ trix-toolbar .trix-button-row {
   justify-content: space-between;
   overflow-x: auto; }
 
+/*ocultar el boton de archivos adjuntos*/
+trix-toolbar .trix-button--icon-attach {
+    display: none;
+}
+
+.trix-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.trix-content ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+}
+
+.trix-content li {
+  margin-bottom: 0.25rem;
+}
+
 trix-toolbar .trix-button-group {
   display: flex;
   margin-bottom: 10px;
   border: 1px solid #bbb;
   border-top-color: #ccc;
-  border-bottom-color: #888;
+  border-bottom-color: #888888;
   border-radius: 3px; }
   trix-toolbar .trix-button-group:not(:first-child) {
     margin-left: 1.5vw; }
@@ -41,7 +69,7 @@ trix-toolbar .trix-button-group-spacer {
 trix-toolbar .trix-button {
   position: relative;
   float: left;
-  color: rgba(241, 234, 234, 0.6);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 0.75em;
   font-weight: 600;
   white-space: nowrap;
@@ -49,22 +77,23 @@ trix-toolbar .trix-button {
   margin: 0;
   outline: none;
   border: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ffffff;
   border-radius: 0;
-  background: transparent; }
+  background: #afa1a1; }
   trix-toolbar .trix-button:not(:first-child) {
     border-left: 1px solid #ccc; }
   trix-toolbar .trix-button.trix-active {
     background: #cbeefa;
-    color: black; }
+    color: rgb(0, 0, 0); }
   trix-toolbar .trix-button:not(:disabled) {
     cursor: pointer; }
   trix-toolbar .trix-button:disabled {
-    color: rgba(0, 0, 0, 0.125); }
+    color: rgba(255, 255, 255, 0.125); }
   @media (max-width: 768px) {
     trix-toolbar .trix-button {
       letter-spacing: -0.01em;
-      padding: 0 0.3em; } }
+      padding: 0 0.3em;
+       } }
 
 trix-toolbar .trix-button--icon {
   font-size: inherit;
@@ -83,7 +112,7 @@ trix-toolbar .trix-button--icon {
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: 0.6;
+    opacity: 6;
     content: "";
     background-position: center;
     background-repeat: no-repeat;
@@ -93,9 +122,9 @@ trix-toolbar .trix-button--icon {
         right: 6%;
         left: 6%; } }
   trix-toolbar .trix-button--icon.trix-active::before {
-    opacity: 1; }
+    opacity: 5; }
   trix-toolbar .trix-button--icon:disabled::before {
-    opacity: 0.125; }
+    opacity: 5; }
 
 trix-toolbar .trix-button--icon-attach::before {
   background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M10.5%2018V7.5c0-2.25%203-2.25%203%200V18c0%204.125-6%204.125-6%200V7.5c0-6.375%209-6.375%209%200V18%22%20stroke%3D%22%23000%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
@@ -124,7 +153,8 @@ trix-toolbar .trix-button--icon-code::before {
   background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M3.293%2011.293a1%201%200%200%200%200%201.414l4%204a1%201%200%201%200%201.414-1.414L5.414%2012l3.293-3.293a1%201%200%200%200-1.414-1.414l-4%204Zm13.414%205.414%204-4a1%201%200%200%200%200-1.414l-4-4a1%201%200%201%200-1.414%201.414L18.586%2012l-3.293%203.293a1%201%200%200%200%201.414%201.414Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E"); }
 
 trix-toolbar .trix-button--icon-bullet-list::before {
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M5%207.5a1.5%201.5%200%201%200%200-3%201.5%201.5%200%200%200%200%203ZM8%206a1%201%200%200%201%201-1h11a1%201%200%201%201%200%202H9a1%201%200%200%201-1-1Zm1%205a1%201%200%201%200%200%202h11a1%201%200%201%200%200-2H9Zm0%206a1%201%200%201%200%200%202h11a1%201%200%201%200%200-2H9Zm-2.5-5a1.5%201.5%200%201%201-3%200%201.5%201.5%200%200%201%203%200ZM5%2019.5a1.5%201.5%200%201%200%200-3%201.5%201.5%200%200%200%200%203Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E"); }
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M5%207.5a1.5%201.5%200%201%200%200-3%201.5%201.5%200%200%200%200%203ZM8%206a1%201%200%200%201%201-1h11a1%201%200%201%201%200%202H9a1%201%200%200%201-1-1Zm1%205a1%201%200%201%200%200%202h11a1%201%200%201%200%200-2H9Zm0%206a1%201%200%201%200%200%202h11a1%201%200%201%200%200-2H9Zm-2.5-5a1.5%201.5%200%201%201-3%200%201.5%201.5%200%200%201%203%200ZM5%2019.5a1.5%201.5%200%201%200%200-3%201.5%201.5%200%200%200%200%203Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E"); 
+ }
 
 trix-toolbar .trix-button--icon-number-list::before {
   background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M3%204h2v4H4V5H3V4Zm5%202a1%201%200%200%201%201-1h11a1%201%200%201%201%200%202H9a1%201%200%200%201-1-1Zm1%205a1%201%200%201%200%200%202h11a1%201%200%201%200%200-2H9Zm0%206a1%201%200%201%200%200%202h11a1%201%200%201%200%200-2H9Zm-3.5-7H6v1l-1.5%202H6v1H3v-1l1.667-2H3v-1h2.5ZM3%2017v-1h3v4H3v-1h2v-.5H4v-1h1V17H3Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fsvg%3E"); }
@@ -151,8 +181,8 @@ trix-toolbar .trix-dialog {
   right: 0;
   font-size: 0.75em;
   padding: 15px 10px;
-  background: #fff;
-  box-shadow: 0 0.3em 1em #ccc;
+  background: #918d8d;
+  box-shadow: none;
   border-top: 2px solid #888;
   border-radius: 5px;
   z-index: 5; }
@@ -163,10 +193,11 @@ trix-toolbar .trix-input--dialog {
   padding: 0.5em 0.8em;
   margin: 0 10px 0 0;
   border-radius: 3px;
-  border: 1px solid #bbb;
-  background-color: #fff;
+  border: 1px solid #f8f8f8;
+  background-color: #6e6b6b;
   box-shadow: none;
   outline: none;
+  color:#000000; 
   -webkit-appearance: none;
   -moz-appearance: none; }
   trix-toolbar .trix-input--dialog.validate:invalid {
@@ -175,7 +206,8 @@ trix-toolbar .trix-input--dialog {
 trix-toolbar .trix-button--dialog {
   font-size: inherit;
   padding: 0.5em;
-  border-bottom: none; }
+  border-bottom: none;
+  }
 
 trix-toolbar .trix-dialog--link {
   max-width: 600px; }

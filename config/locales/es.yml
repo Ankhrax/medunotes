@@ -1,0 +1,89 @@
+es:
+  notes:
+    title: "Título"
+    body: "Cuerpo"
+    save: "Guardar"
+    cancel: "Cancelar"
+    recent: "Notas Recientes"
+    your_notes: "Tus Notas"
+    no_notes: "No se encontraron notas que coincidan con tu búsqueda."
+    back: "Volver"
+    edit: "Editar"
+    delete: "Eliminar"
+    confirm_delete: "¿Estás seguro?"
+    time_ago: "Hace %{time}"
+    create_success: "Nota creada con éxito."
+    update_success: "Nota actualizada con éxito."
+    delete_success: "Nota eliminada con éxito."
+    create_failure: "No se pudo guardar la nota. Por favor, completa todos los campos."
+    update_failure: "No se pudo actualizar la nota. Por favor, completa todos los campos."
+
+  datetime:
+    distance_in_words:
+      less_than_x_minutes:
+        one: "hace unos segundos"
+        other: "menos de %{count} minutos"
+      x_days:
+        one: "un día"
+        other: "%{count} días"
+      x_hours:
+        one: "una hora"
+        other: "%{count} horas"
+      x_minutes:
+        one: "un minuto"
+        other: "%{count} minutos"
+      x_seconds:
+        one: "menos de un minuto"
+        other: "%{count} segundos"
+      about_x_hours:
+        one: "una hora"
+        other: "%{count} horas"
+
+  navbar:
+    search: "Buscar notas..."
+    new_note: "Nueva Nota"
+    account: "Cuenta"
+    logout: "Cerrar sesión"
+
+  password:
+    update_title: "Actualizar tu contraseña"
+    new_password: "Ingresa una nueva contraseña"
+    repeat_password: "Repite la nueva contraseña"
+    save: "Guardar"
+    forgot_title: "¿Olvidaste tu contraseña?"
+    enter_email: "Ingresa tu dirección de correo electrónico"
+    email_instructions: "Enviar instrucciones de restablecimiento"
+    reset_instructions_html: "Puedes restablecer tu contraseña en los próximos 15 minutos en %{link}."
+    reset_page: "esta página de restablecimiento de contraseña"
+    reset_instructions: "Puedes restablecer tu contraseña en los próximos 15 minutos en esta página de restablecimiento de contraseña:"
+    reset_instructions_sent: "Las instrucciones para restablecer la contraseña fueron enviadas (si existe un usuario registrado con ese correo)."
+    reset_pass_done: "La contraseña se ha actualizado."
+    pass_dont_match: "Las contraseñas no coinciden."
+    expired_link: "El enlace para restablecer la contraseña es invalido o expiró."
+
+  sessions:
+    sign_in: "Iniciar sesión"
+    email_placeholder: "Introduce tu dirección de correo electrónico"
+    password_placeholder: "Introduce tu contraseña"
+    sign_in_button: "Iniciar sesión"
+    forgot_password: "¿Olvidaste tu contraseña?"
+    sign_up: "Registrarse"
+
+  user:
+    update_account_button: "Actualizar cuenta"
+    cancel: "Cancelar"
+    sign_up: "Regístrate"
+    email_address: "Dirección de correo electrónico"
+    password: "Contraseña"
+    password_confirmation: "Confirmar contraseña"
+    sign_up_button: "Regístrate"
+    account_details: "Detalles de la Cuenta"
+    edit_mail: "Cambiar correo electronico"
+    delete_account: "Eliminar Cuenta"
+    delete_confirm: "¿Estás seguro?"
+    back: "Atrás"
+    pass_dont_match: "Las contraseñas no coinciden."
+    creation: "Usuario creado exitosamente."
+    account_updated: "Se ha actualizado la cuenta."
+    deleting_account: "Se ha eliminado la cuenta correctamente."
+

@@ -1,0 +1,13 @@
+<div class="mx-auto md:w-1/3 sm:w-4/5">
+  <%= form_for Current.user do |f| %>
+    <div class="mb-4">
+      <%= f.label :email_address, class: "label text-lg font-medium text-gray-500" %>
+      <%= f.email_field :email_address, value: Current.user.email_address, class: "input input-bordered w-full" %>
+    </div>
+
+    <div class="mt-6">
+      <%= f.submit t("user.update_account_button"), class: "btn btn-primary w-full sm:w-auto" %>
+      <%= link_to t("user.cancel"), user_path(Current.user), class: "btn btn-ghost text-xl ml-4" %>
+    </div>
+  <% end %>
+</div>

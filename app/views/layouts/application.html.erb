@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Medunotes" %></title>
+    <title><%= content_for(:title) || "BlinkNote" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -25,11 +25,11 @@
   <body>
     <%= render "notes/navbar" %>
     <% if flash[:notice] %>
-      <div class="alert alert-success shadow-lg w-fit">
+      <div class="alert alert-success shadow-lg w-fit p-1">
         <span><%= flash[:notice] %></span>
       </div>
     <% elsif flash[:alert] %>
-      <div class="alert alert-error shadow-lg w-fit">
+      <div class="alert alert-error shadow-lg w-fit p-1">
         <span><%= flash[:alert] %></span>
       </div>
     <% end %>

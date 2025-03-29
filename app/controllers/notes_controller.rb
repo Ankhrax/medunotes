@@ -4,7 +4,6 @@ class NotesController < ApplicationController
   def index
     @recent_notes = Current.user.notes.order(last_viewed_at: :desc).limit(3)
 
-
     if params[:query].present?
       @notes = Current.user.notes.left_joins(:rich_text_body)
                   .where("notes.title ILIKE ? OR action_text_rich_texts.body ILIKE ?",
@@ -27,9 +26,9 @@ class NotesController < ApplicationController
     @note = Current.user.notes.new(note_params)
 
     if @note.save
-      redirect_to @note, notice: "Nota creada con éxito."
+      redirect_to @note, notice: t('notes.create_success')
     else
-      flash.now[:alert] = "La nota no pudo ser guardada. Por favor, complete todos los campos."
+      flash.now[:alert] = t('notes.create_failure')
       render :new, status: :unprocessable_entity
     end
   end
@@ -42,9 +41,9 @@ class NotesController < ApplicationController
     @note = Current.user.notes.find(params[:id])
 
     if @note.update(note_params)
-      redirect_to @note, notice: "Nota actualizada correctamente."
+      redirect_to @note, notice: t('notes.update_success')
     else
-      flash.now[:alert] = "La nota no pudo ser actualizada. Por favor, complete todos los campos."
+      flash.now[:alert] = t('notes.update_failure')
       render :edit, status: :unprocessable_entity
     end
   end
@@ -52,7 +51,7 @@ class NotesController < ApplicationController
   def destroy
     @note = Current.user.notes.find(params[:id])
     @note.destroy
-    redirect_to notes_path, notice: "Nota eliminada correctamente."
+    redirect_to notes_path, notice: t('notes.delete_success')
   end
 
   private
