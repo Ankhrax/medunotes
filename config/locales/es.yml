@@ -41,7 +41,7 @@ es:
 
   navbar:
     search: "Buscar notas..."
-    new_note: "Nueva Nota"
+    new_note: "Nueva"
     account: "Cuenta"
     logout: "Cerrar sesión"
 
@@ -60,6 +60,7 @@ es:
     reset_pass_done: "La contraseña se ha actualizado."
     pass_dont_match: "Las contraseñas no coinciden."
     expired_link: "El enlace para restablecer la contraseña es invalido o expiró."
+    cancel: "Cancelar"
 
   sessions:
     sign_in: "Iniciar sesión"
@@ -68,7 +69,9 @@ es:
     sign_in_button: "Iniciar sesión"
     forgot_password: "¿Olvidaste tu contraseña?"
     sign_up: "Registrarse"
-
+    data_error: "Intente con otro correo o contraseña."
+    try_later: "Intente más tarde."
+    
   user:
     update_account_button: "Actualizar cuenta"
     cancel: "Cancelar"
@@ -78,12 +81,30 @@ es:
     password_confirmation: "Confirmar contraseña"
     sign_up_button: "Regístrate"
     account_details: "Detalles de la Cuenta"
-    edit_mail: "Cambiar correo electronico"
+    edit_mail: "Cambiar correo electrónico"
     delete_account: "Eliminar Cuenta"
     delete_confirm: "¿Estás seguro?"
     back: "Atrás"
     pass_dont_match: "Las contraseñas no coinciden."
-    creation: "Usuario creado exitosamente."
+    created: "Usuario creado exitosamente."
+    email_taken: "El correo electrónico ya está en uso. Por favor, ingresa otro correo."
     account_updated: "Se ha actualizado la cuenta."
     deleting_account: "Se ha eliminado la cuenta correctamente."
 
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email_address:
+              blank: "El correo electrónico no puede estar vacío"
+            password:
+              blank: "La contraseña no puede estar vacía"
+              too_short: "La contraseña es demasiado corta (mínimo %{count} caracteres)"
+              weak_password: "Debe contener al menos una mayúscula, una minúscula, un número y un carácter especial"
+            password_confirmation:
+              blank: "La confirmación de la contraseña no puede estar vacía"
+              confirmation: "Las contraseñas no coinciden"
+  errors:
+    messages:
+      blank: "No puede estar vacío"

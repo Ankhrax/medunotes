@@ -1,17 +1,20 @@
 <%= form_with model: @note do |form| %>
-  <div>
-    <%= form.label :title, t("notes.title"), class: "text-bold" %>
-    <%= form.text_field :title, class: "border rounded-lg p-2 w-full" %>
-  </div>
+  <div class="flex flex-col p-4 w-full max-w-2xl mx-auto">
+    
+    <div>
+      <%= form.label :title, t("notes.title"), class: "font-bold" %>
+      <%= form.text_field :title, class: "border rounded-lg p-2 w-full bg-white text-black" %>
+    </div>
 
-  <div>
-    <%= form.label :body, t("notes.body"), class: "block font-bold mb-2" %>
-    <%= form.rich_text_area :body, class: "trix-content text-white bg-gray-800 p-4 rounded-lg" %>
-  </div>
+    <div class="mt-4">
+      <%= form.label :body, t("notes.body"), class: "block font-bold mb-2" %>
+      <%= form.rich_text_area :body, class: "trix-content text-black bg-white p-4 rounded-lg w-full min-h-[300px]" %>
+    </div>
 
-  <br>
-  <div>
-    <%= form.submit t("notes.save"), class: "btn btn-success h-10" %>
-    <%= link_to t("notes.cancel"), notes_path, class: "btn btn-ghost" %>
+    <div class="mt-6 flex flex-wrap gap-4">
+      <%= form.submit t("notes.save"), class: "btn btn-success h-10" %>
+      <%= link_to t("notes.cancel"), notes_path, class: "btn btn-ghost" %>
+    </div>
+
   </div>
 <% end %>

@@ -4,3 +4,8 @@ import "controllers"
 
 import "trix"
 import "@rails/actiontext"
+
+
+document.addEventListener("trix-file-accept", function(event) {
+    event.preventDefault();
+  });

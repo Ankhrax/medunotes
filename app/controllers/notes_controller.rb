@@ -26,9 +26,9 @@ class NotesController < ApplicationController
     @note = Current.user.notes.new(note_params)
 
     if @note.save
-      redirect_to @note, notice: t('notes.create_success')
+      redirect_to @note, notice: t("notes.create_success")
     else
-      flash.now[:alert] = t('notes.create_failure')
+      flash.now[:alert] = t("notes.create_failure")
       render :new, status: :unprocessable_entity
     end
   end
@@ -41,9 +41,9 @@ class NotesController < ApplicationController
     @note = Current.user.notes.find(params[:id])
 
     if @note.update(note_params)
-      redirect_to @note, notice: t('notes.update_success')
+      redirect_to @note, notice: t("notes.update_success")
     else
-      flash.now[:alert] = t('notes.update_failure')
+      flash.now[:alert] = t("notes.update_failure")
       render :edit, status: :unprocessable_entity
     end
   end
@@ -51,7 +51,7 @@ class NotesController < ApplicationController
   def destroy
     @note = Current.user.notes.find(params[:id])
     @note.destroy
-    redirect_to notes_path, notice: t('notes.delete_success')
+    redirect_to notes_path, notice: t("notes.delete_success")
   end
 
   private

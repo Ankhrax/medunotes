@@ -1,7 +1,8 @@
-<div class="mx-auto md:w-2/3 w-full">
+<h1 class="font-bold text-4xl text-center mt-4"><%= t("password.update_title") %></h1>
+<div class="mx-auto w-full max-w-sm">
  
 
-  <h1 class="font-bold text-4xl"><%= t("password.update_title") %></h1>
+  
 
   <%= form_with url: password_path(params[:token]), method: :put, class: "contents" do |form| %>
     <div class="my-5">
@@ -14,7 +15,8 @@
 
     <div class="inline">
       
-      <%= form.submit t("password.save"), class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+      <%= form.submit t("password.save"), class: "sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+      <%= link_to t("password.cancel"), root_path, class: "btn btn-ghost text-xl ml-4"%>
     </div>
   <% end %>
 </div>

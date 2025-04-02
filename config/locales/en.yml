@@ -41,7 +41,7 @@ en:
 
   navbar:
     search: "Search notes..."
-    new_note: "New Note"
+    new_note: "New"
     account: "Account"
     logout: "Log out"
 
@@ -60,6 +60,7 @@ en:
     reset_pass_done: "Password has been updated."
     pass_dont_match: "Passwords did not match."
     expired_link: "Password reset link is invalid or has expired."
+    cancel: "Cancel"
 
   sessions:
     sign_in: "Sign in"
@@ -68,6 +69,8 @@ en:
     sign_in_button: "Sign in"
     forgot_password: "Forgot password?"
     sign_up: "Sign up"
+    data_error: "Try another email address or password."
+    try_later: "Try again later."
 
   user:
     update_account_button: "Update Account"
@@ -83,6 +86,26 @@ en:
     delete_confirm: "Are you sure?"
     back: "Back"
     pass_dont_match: "Passwords did not match."
-    creation: "User Successfully Created."
+    created: "User Successfully Created."
+    email_taken: "Email is in use, please input another email."
     account_updated: "Account updated successfully."
     deleting_account: "Account deleted successfully."
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email_address:
+              blank: "El correo electrónico no puede estar vacío"
+            password:
+              blank: "Password can't be blank"
+              too_short: "Password is too short (minimum %{count} characters)"
+              weak_password: "Must contain at least one uppercase, one lowercase, one number, and one special character"
+            password_confirmation:
+              blank: "La confirmación de la contraseña no puede estar vacía"
+              confirmation: "Passwords do not match"
+  errors:
+    messages:
+      blank: "Can't be blank"
+      taken: "Has already been taken"

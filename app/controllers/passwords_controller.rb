@@ -10,18 +10,18 @@ class PasswordsController < ApplicationController
       PasswordsMailer.reset(user).deliver_later
     end
 
-    redirect_to new_session_path, notice: t('password.reset_instructions_sent')
+    redirect_to new_session_path, notice: t("password.reset_instructions_sent")
   end
 
   def edit
   end
 
   def update
-    if @user.update(params.permit(:password, :password_confirmation))
-      redirect_to new_session_path, notice: t('password.reset_pass_done')
+    if @user.update(password_params)
+      redirect_to new_session_path, notice: t("password.reset_pass_done")
     else
-      
-      redirect_to edit_password_path(params[:token]), alert: t('password.pass_dont_match')
+      flash.now[:alert] = @user.errors.full_messages.to_sentence
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -29,6 +29,10 @@ class PasswordsController < ApplicationController
     def set_user_by_token
       @user = User.find_by_password_reset_token!(params[:token])
     rescue ActiveSupport::MessageVerifier::InvalidSignature
-      redirect_to new_password_path, alert: t('password.expired_link')
+      redirect_to new_password_path, alert: t("password.expired_link")
+    end
+
+    def password_params
+      params.permit(:password, :password_confirmation)
     end
 end
