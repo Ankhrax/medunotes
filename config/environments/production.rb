@@ -68,7 +68,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.sendgrid.net",
     port: 587,
-    domain: "blinknote.onrender.com"
+    domain: "blinknote.onrender.com",
     user_name: "apikey",  # SendGrid usa "apikey" como usuario
     password: ENV["SENDGRID_API_KEY"],  # Usa una variable de entorno
     authentication: "plain",
