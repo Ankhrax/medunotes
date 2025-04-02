@@ -79,9 +79,6 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: <%= ENV['DATABASE_URL'] %>
-
-  queue:
-    <<: *default
-    database: <%= ENV['DATABASE_URL'] %>
+  cable:
+    adapter: postgresql
+    url: <%= ENV['DATABASE_URL'] %>
