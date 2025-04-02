@@ -21,7 +21,7 @@ en:
   datetime:
     distance_in_words:
       less_than_x_minutes:
-        one: "a few seconds ago"
+        one: "a few seconds"
         other: "less than %{count} minutes"
       x_days:
         one: "1 day"
@@ -36,8 +36,8 @@ en:
         one: "less than a minute"
         other: "%{count} seconds"
       about_x_hours:
-        one: "an hour ago"
-        other: "%{count} hours ago"
+        one: "an hour"
+        other: "%{count} hours"
 
   navbar:
     search: "Search notes..."
